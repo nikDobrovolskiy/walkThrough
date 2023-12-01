@@ -41,4 +41,36 @@
 `lib\net461\<файлы>`\
 `ref\net471\<файлы>`\
 
-Оп
+### SSL Certificate
+Для разработки нужен подписать сертификат. Для этого используется `dotnet dev-certs`.  
+Материал:  
+* [Enforce HTTPS in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-8.0&tabs=visual-studio%2Clinux-ubuntu)
+* [ASP.NET Core security topics](https://learn.microsoft.com/en-us/aspnet/core/security/?view=aspnetcore-6.0)
+* [How to setup the dev certificate when using Docker in development](https://github.com/dotnet/AspNetCore.Docs/issues/6199)
+#### IIE Express
+Если броузер не способен подключиться к приложению, можно попробовать несколько вещей.  
+```
+cd 'C:\Program Files (x86)\IIS Express'
+IisExpressAdminCmd.exe setupsslUrl -url:https://localhost:44387/ -UseSelfSigned
+```
+Полезные ссылки:  
+* [How do I restore a missing IIS Express SSL Certificate?](https://stackoverflow.com/questions/20036984/how-do-i-restore-a-missing-iis-express-ssl-certificate/20048613#20048613)
+
+### Containers  
+Материал:  
+* [Customize Docker containers in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/containers/container-build?view=vs-2022&ref=goatreview.com)
+
+### Debug
+Материал:  
+* [Attaching to remote processes](https://github.com/dotnet/vscode-csharp/wiki/Attaching-to-remote-processes)
+
+
+## PowerShell
+
+### Запуск 
+Для запуска из командной строки необходимо добавить аттрибуты при вызове powershell.exe. Вот так:
+``` 
+> powershell.exe -NonInteractive -NoProfile -ExecutionPolicy RemoteSigned -File "C:\...\<имя>.ps1" 
+```
+
+## Docker
