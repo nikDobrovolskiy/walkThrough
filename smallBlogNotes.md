@@ -47,6 +47,7 @@
 * [Enforce HTTPS in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-8.0&tabs=visual-studio%2Clinux-ubuntu)
 * [ASP.NET Core security topics](https://learn.microsoft.com/en-us/aspnet/core/security/?view=aspnetcore-6.0)
 * [How to setup the dev certificate when using Docker in development](https://github.com/dotnet/AspNetCore.Docs/issues/6199)
+
 #### IIE Express
 Если броузер не способен подключиться к приложению, можно попробовать несколько вещей.  
 ```
@@ -73,4 +74,18 @@ IisExpressAdminCmd.exe setupsslUrl -url:https://localhost:44387/ -UseSelfSigned
 > powershell.exe -NonInteractive -NoProfile -ExecutionPolicy RemoteSigned -File "C:\...\<имя>.ps1" 
 ```
 
-## Docker
+## VS Code
+### Hotkeys
+* ctrl + ` -- переключение terminal <-> code
+* ctrl + shift + P - run command
+
+### Команды
+* configure tasks - настройка быстрых команд в проекте
+
+## EntityFramework Core
+Посмотреть SQL-команду создания всех таблиц контекста:
+```
+var sqlSource = db.Database.GenerateCreateScript();  
+```
+
+
